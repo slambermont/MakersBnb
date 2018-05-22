@@ -4,6 +4,7 @@
   "description": "A web application that allows users to list spaces they have available, and to hire spaces for the night.",
   "main": "app.js",
   "scripts": {
+    "cypress": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "cypress": "^2.1.0"
   }
 }
