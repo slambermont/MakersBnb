@@ -9,7 +9,7 @@ function Properties() {
     //iterates over information creating new Property object for each property
   }
 
-  Properties.prototype.addProperty = function(name, price, description, contact) {
+  Properties.prototype.addProperty = function(title, price, description, contact) {
     //Adds information to database: properties table in a new row
   }
 }
