@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "siobhangi",
+    "password": null,
+    "database": "MakersBnB",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "siobhangi",
+    "password": null,
+    "database": "MakersBnB",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "Oli",
+    "password": null,
+    "database": "MakersBnB",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
