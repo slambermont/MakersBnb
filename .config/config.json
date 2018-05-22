@@ -1,26 +1,23 @@
 {
   "development": {
-    "username": "siobhangi",
+    "username": "root",
     "password": null,
-    "database": "MakersBnB",
+    "database": "database_development",
     "host": "127.0.0.1",
-    "port": 5432,
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "test": {
-    "username": "siobhangi",
+    "username": "root",
     "password": null,
-    "database": "MakersBnB",
+    "database": "database_test",
     "host": "127.0.0.1",
-    "port": 5432,
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "production": {
-    "username": "Oli",
+    "username": "root",
     "password": null,
-    "database": "MakersBnB",
+    "database": "database_production",
     "host": "127.0.0.1",
-    "port": 5432,
-    "dialect": "postgres"
+    "dialect": "mysql"
   }
 }

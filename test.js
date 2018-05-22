@@ -1,7 +1,6 @@
-const db = require('./models/index.js').property;
+const db = require('./server/models/index.js').Properties;
 
 
 db.create({
   name: "bars",
 });
-console.log(db)
