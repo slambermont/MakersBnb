@@ -1,12 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
-  var Property = sequelize.define('Property', {
-    name: DataTypes.STRING,
-    description: DataTypes.STRING,
+  var property = sequelize.define('property', {
+    name: DataTypes.CHAR,
+    description: DataTypes.CHAR,
     price: DataTypes.FLOAT,
-    contact: DataTypes.STRING
-  }, {});
-  Property.associate = function(models) {
+    contact: DataTypes.CHAR,
+  }, {
+    timestamps: false
+  });
+  property.associate = function(models) {
     // associations can be defined here
   };
-  return Property;
+  return property;
+
 };
