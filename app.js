@@ -9,6 +9,12 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 
 app.get('/', function(req, res) {
+  listings = []
+  db.findAll()
+  .then(spaces => { spaces.forEach(function (space) {
+    listings.push(space.dataValues);
+  console.log(listings) })});
+    console.log(listings);
   res.render('index')
 });
 
@@ -34,9 +40,14 @@ app.listen(3000, function() {
   console.log('Server is up!')
 });
 
-//test db is connected
-db.create({
-  name: "test",
+app.post('/listing', function(req, res) {
+  db.create({
+    name: req.body.title,
+    description: req.body.description,
+    price: req.body.price,
+    contact: req.body.contact,
+  });
+  res.redirect('/')
 });
 
 module.exports = app;
