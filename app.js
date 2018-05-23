@@ -13,9 +13,9 @@ app.get('/', function(req, res) {
   db.findAll()
   .then(spaces => { spaces.forEach(function (space) {
     listings.push(space.dataValues);
-  console.log(listings) })});
-    console.log(listings);
+   })
   res.render('index')
+ });
 });
 
 app.get('/users/new', function(req, res) {
@@ -47,7 +47,10 @@ app.post('/listing', function(req, res) {
     price: req.body.price,
     contact: req.body.contact,
   });
-  res.redirect('/')
+  setTimeout(function() {
+    res.redirect('/')
+  },500);
 });
+
 
 module.exports = app;
