@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<h1>Makers BnB Login</h1>
+
+<div>
+  <form action="/sessions" method="post">
+    <label for="email">Email:</label>
+    <input type="text" name="email">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<% include partials/footer %>
