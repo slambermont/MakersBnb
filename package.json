@@ -19,9 +19,17 @@
   "homepage": "https://github.com/Slambermont/MakersBnb#readme",
   "dependencies": {
     "ejs": "^2.6.1",
+<<<<<<< HEAD
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.8",
+    "sequelize-cli": "^4.0.0"
+=======
     "express": "^4.16.3"
   },
   "devDependencies": {
     "cypress": "^2.1.0"
+>>>>>>> master
   }
 }
