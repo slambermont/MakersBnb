@@ -1,6 +1,12 @@
 <% include partials/header %>
+<form class="signup-page" action="/users/new" method="get">
+  <input type="submit" value="Signup">
+</form>
+
 
 <h1>MakersBnB</h1>
+
+<h3> Hello <%= name %> </h3>
 
 <div class="input">
   <form action="/listing" method="post">
