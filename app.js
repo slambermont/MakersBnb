@@ -20,27 +20,6 @@ app.get('/', async function(req, res) {
  res.render('index')
 });
 
-app.get('/users/new', function(req, res) {
-  res.render('signup')
-});
-
-app.post('/users', function(req, res) {
-  res.redirect('/')
-});
-
-app.get('/sessions/new', function(req, res) {
-  res.render('login')
-});
-
-app.post('/sessions', function(req, res) {
-  console.log(req.body);
-  res.redirect('/')
-});
-
-app.listen(3000, function() {
-  console.log('Server is up!')
-});
-
 app.post('/listing', async function(req, res) {
   await property.create({
     name: req.body.title,
@@ -49,8 +28,35 @@ app.post('/listing', async function(req, res) {
     contact: req.body.contact,
   });
     res.redirect('/')
-
 });
+
+app.get('/users/new', function(req, res) {
+  res.render('signup')
+});
+
+app.post('/users', function(req, res) {
+  user.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
+  })
+  res.redirect('/')
+});
+
+// app.get('/sessions/new', function(req, res) {
+//   res.render('login')
+// });
+//
+// app.post('/sessions', function(req, res) {
+//   console.log(req.body);
+//   res.redirect('/')
+// });
+
+app.listen(3000, function() {
+  console.log('Server is up!')
+});
+
+
 
 
 module.exports = app;
