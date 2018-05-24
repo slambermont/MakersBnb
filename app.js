@@ -1,9 +1,8 @@
-const db = require("./server/models/index.js").Properties;
+const property = require("./server/models/index.js").Properties;
+const user = require("./server/models/index.js").Users;
 var express = require("express")
-var session = require('express-session')
 var app = express()
 
-app.use(session());
 
 app.use(express.urlencoded());
 
@@ -13,9 +12,7 @@ app.set('view engine', 'ejs')
 
 app.get('/', async function(req, res) {
   listings = []
-  name = req.body.username;
-  console.log(name);
-  await db.findAll()
+  await property.findAll()
   .then(spaces => { spaces.forEach(function (space) {
     listings.push(space.dataValues);
    })
@@ -45,7 +42,7 @@ app.listen(3000, function() {
 });
 
 app.post('/listing', async function(req, res) {
-  await db.create({
+  await property.create({
     name: req.body.title,
     description: req.body.description,
     price: req.body.price,
