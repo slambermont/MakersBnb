@@ -1,12 +1,22 @@
 <% include partials/header %>
-<form class="signup-page" action="/users/new" method="get">
-  <input type="submit" value="Signup">
-</form>
 
+  <% if(username) { %>
+    <form class="signup-page" action="/" method="get">
+      <input type="submit" value="Signout">
+    </form>
+
+    <% } else { %>
+      <form class="signup-page" action="/users/new" method="get">
+        <input type="submit" value="Signup">
+      </form>
+<% }; %>
 
 <h1>MakersBnB</h1>
 
-<h2> <%= username %> </h2>
+
+
+  <% if(username) { %>
+<h2>   Hello <%= username %> </h2>
 
 <div class="input">
   <form action="/listing" method="post">
@@ -23,12 +33,13 @@
 </div>
 
 <div class="lisings">
+  <% } %>
   <ul>
   <% listings.forEach(function(listing) { %>
     <li>
       <%= listing.name %><br>
       <%= listing.description %><br>
-      <%= listing.price %><br>
+      £<%= listing.price %><br>
       <%= listing.contact %>
     </li>
     <br>
