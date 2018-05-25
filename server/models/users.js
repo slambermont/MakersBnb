@@ -5,8 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING
   }, {});
-  Users.associate = function(models) {
-    // associations can be defined here
-  };
+  Users.associate = (models) => {
+    Users.hasMany(models.Properties, {
+      foreignKey: 'userId',
+      as: 'Users'
+    });
+  };;
   return Users;
 };

@@ -6,8 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.FLOAT,
     contact: DataTypes.STRING
   }, {});
-  Properties.associate = function(models) {
-    // associations can be defined here
+  Properties.associate = (models) => {
+    Properties.belongsTo(models.Users, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE',
+    });
   };
   return Properties;
 };
