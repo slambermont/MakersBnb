@@ -1,16 +1,20 @@
 const property = require("./server/models/index.js").Properties;
 const user = require("./server/models/index.js").Users;
-var express = require("express")
-var app = express()
+var express = require("express");
+var session = require('express-session');
+var BodyParser = require('body-parser');
+var app = express();
 
 
 app.use(express.urlencoded());
+app.use(session({secret: 'anything'}))
 
 app.use(express.static('public'))
 
 app.set('view engine', 'ejs')
 
 app.get('/', async function(req, res) {
+  username = req.session.username
   listings = []
   await property.findAll()
   .then(spaces => { spaces.forEach(function (space) {
@@ -40,6 +44,7 @@ app.post('/users', function(req, res) {
     email: req.body.email,
     password: req.body.password
   })
+  req.session.username = req.body.username;
   res.redirect('/')
 });
 
