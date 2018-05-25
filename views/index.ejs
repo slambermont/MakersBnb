@@ -1,19 +1,17 @@
 <% include partials/header %>
 
   <% if(username) { %>
-    <form class="signup-page" action="/" method="get">
+    <form class="signout-page" action="/signout" method="post">
       <input type="submit" value="Signout">
     </form>
 
-    <% } else { %>
+    <% } else {  %>
       <form class="signup-page" action="/users/new" method="get">
         <input type="submit" value="Signup">
       </form>
 <% }; %>
 
 <h1>MakersBnB</h1>
-
-
 
   <% if(username) { %>
 <h2>   Hello <%= username %> </h2>

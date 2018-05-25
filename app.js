@@ -49,6 +49,12 @@ app.post('/users', function(req, res) {
   res.redirect('/')
 });
 
+app.post('/signout', function(req, res) {
+  req.session.username = null
+  res.redirect('/')
+
+})
+
 // app.get('/sessions/new', function(req, res) {
 //   res.render('login')
 // });
