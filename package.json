@@ -4,7 +4,8 @@
   "description": "A web application that allows users to list spaces they have available, and to hire spaces for the night.",
   "main": "app.js",
   "scripts": {
-    "test": "NODE_ENV=test node app.js",
+    "testenv": "export NODE_ENV=test&& sequelize db:seed:undo:all&& sequelize db:seed:all&& nodemon app.js",
+    "devenv": "export NODE_ENV=development&& nodemon app.js",
     "cypress": "cypress open"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "nodemon": "^1.17.5",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.8",

@@ -21,6 +21,7 @@ app.get('/', async function(req, res) {
     listings.push(space.dataValues);
    })
  });
+ console.log(process.env.NODE_ENV)
  res.render('index')
 });
 
