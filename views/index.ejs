@@ -20,8 +20,12 @@
   <ul>
   <% listings.forEach(function(listing) { %>
     <li>
-      <%= listing.name %>
+      <%= listing.name %><br>
+      <%= listing.description %><br>
+      <%= listing.price %><br>
+      <%= listing.contact %>
     </li>
+    <br>
     <% }) %>
   </ul>
 </div>
